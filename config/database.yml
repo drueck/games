@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: games_development
+  pool: 5
+  username: games
+  password: password
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: games_test
+  pool: 5
+  username: games
+  password: password
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: games_production
+  pool: 5
+  username: games
+  password: password
