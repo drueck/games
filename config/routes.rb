@@ -5,6 +5,8 @@ Games::Application.routes.draw do
 
   root 'home#index'
 
+  resources :games, only: [:index]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
