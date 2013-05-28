@@ -7,6 +7,8 @@ Games::Application.routes.draw do
 
   resources :games, only: [:index]
 
+  get 'bgg-search' => 'board_game_geek_search#index', as: :bgg_search
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
