@@ -17,6 +17,7 @@ describe BoardGameGeekSearchController do
       it "assigns @games to an array of matching results" do
         get :index, format: :json, query: 'Agricola'
         expect(assigns(:games)).not_to be_empty
+        expect(assigns(:games).map { |g| g[:title] }).to include('Agricola')
       end
     end
 
