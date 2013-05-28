@@ -27,8 +27,10 @@
     <p class="alert"><%= alert %></p>
     </section>
 
-    <section class="main">
-      <%= yield %>
+    <section class="main row">
+      <div class="large-12 columns">
+        <%= yield %>
+      </div>
     </section>
 
     <%= javascript_include_tag "application" %>
