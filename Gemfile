@@ -41,3 +41,4 @@ gem 'unicorn'
 
 gem 'devise', '~> 3.0.0.rc'
 gem 'figaro'
+gem 'bgg-api', github: 'bhardin/bgg-api'
