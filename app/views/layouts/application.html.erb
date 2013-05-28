@@ -22,10 +22,14 @@
   <body>
     <%= render :partial => 'shared/top_bar' %>
 
+    <section class="alerts">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    </section>
 
-    <%= yield %>
+    <section class="main">
+      <%= yield %>
+    </section>
 
     <%= javascript_include_tag "application" %>
   </body>
