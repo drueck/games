@@ -5,7 +5,7 @@ Games::Application.routes.draw do
 
   root 'home#index'
 
-  resources :games, only: [:index]
+  resources :my_games, only: [:index], path: :games
 
   get 'bgg-search' => 'board_game_geek_search#index', as: :bgg_search
 

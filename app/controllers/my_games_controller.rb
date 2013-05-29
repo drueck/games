@@ -1,4 +1,4 @@
-class GamesController < ApplicationController
+class MyGamesController < ApplicationController
 
   before_action :authenticate_user!
 
