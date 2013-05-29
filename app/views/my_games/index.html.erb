@@ -1,6 +1,6 @@
 <h1>My Games</h1>
 <ul class="unstyled">
   <% @games.each do |game| %>
-    <li><%= link_to game.title, "http://boardgamegeek.com/boardgame/#{game.bgg_id}/" %></li>
+    <li><%= game.title %> [ <%= link_to 'Details', "http://boardgamegeek.com/boardgame/#{game.bgg_id}/" %> ]</li>
   <% end %>
 </ul>
