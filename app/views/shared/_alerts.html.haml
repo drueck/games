@@ -1,0 +1,7 @@
+%section.alerts.row
+  .large-12.columns
+    - flash.each do |type, msg|
+      - next if msg.blank?
+      .alert-box(data-alert)
+        = msg
+        %a.close(href="#") &times;

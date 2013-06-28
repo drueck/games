@@ -1,0 +1,12 @@
+%h1 My Games
+
+%section
+  = form_for Game.new, url: my_games_path do |f|
+    .row.collapse
+      .large-10.columns
+        %input(type="text" placeholder="Game Title")
+      .large-2.columns
+        %input(type="submit" class="button prefix" value="Search")
+
+%section(id="games")
+  = render 'games'
