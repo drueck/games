@@ -1,12 +1,12 @@
 %h1 My Games
 
 %section
-  = form_for Game.new, url: my_games_path do |f|
+  = form_tag my_games_path, remote: true do
     .row.collapse
       .large-10.columns
-        %input(type="text" placeholder="Game Title")
+        %input(type="text" name="game[title]" placeholder="Game Title")
       .large-2.columns
-        %input(type="submit" class="button prefix" value="Search")
+        %input.button.prefix(type="submit" value="Add")
 
-%section(id="games")
+%section#games
   = render 'games'

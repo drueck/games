@@ -1,4 +1,3 @@
 %ul.unstyled.games
   - @games.each do |game|
-    %li
-      #{game.title} [ #{link_to('Details', game.bgg_url)} ]
+    %li= game.title

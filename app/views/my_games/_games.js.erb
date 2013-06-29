@@ -1,3 +1,2 @@
-$("#games").html("
-  = escape_javascript(render partial: 'my_games/games', formats: [:html], locals: { flash: flash } )
-");
+$("input[name='game[title]']").val('');
+$("#games").html("<%= escape_javascript(render partial: 'games', formats: [:html], locals: { flash: flash } ) %>");

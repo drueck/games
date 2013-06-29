@@ -3,26 +3,16 @@ class MyGamesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @games = current_user.games.decorate
+    @games = current_user.games
   end
 
 	def create
-		@game = Game.new(game_params).decorate
+		user = current_user
+		user.add_game(params[:game][:title])
+		@games = user.games
 		respond_to do |format|
-			format.js do
-				if @game.save
-					render partial: 'games'
-				else
-					render partial: 'shared/alerts'
-				end
-			end
+			format.js { render partial: 'games' }
 		end
-	end
-
-	private
-
-	def game_params
-		params.require(:game).permit(:title, :bgg_id)
 	end
 
 end

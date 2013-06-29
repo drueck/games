@@ -23,14 +23,14 @@ describe MyGamesController do
 	describe "#create" do
 
 		before(:each) do
-			sign_in
+			@user = FactoryGirl.create(:user)
+			sign_in @user
 		end
 
-		context "with valid data" do
-			it "should set @game to the created game" do
-				post :create, format: :js, game: FactoryGirl.attributes_for(:game)
-				expect(assigns(:game).id).not_to be_nil
-			end
+		it "should call add_game on the current_user with the specified title" do
+			game_title = 'Game ' + rand(100).to_s
+			@user.should_receive(:add_game).with(game_title)
+			post :create, { format: 'js', game: { title: game_title } }
 		end
 
 	end
