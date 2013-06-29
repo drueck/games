@@ -1,13 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.0.rc1'
+gem 'rails', '4.0.0'
 
 gem 'pg'
 
-gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'haml-rails'
+gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'zurb-foundation', '~> 4.0.0'
+gem 'draper'
 
 gem 'jquery-rails'
 
@@ -41,3 +43,4 @@ gem 'unicorn'
 
 gem 'devise', '~> 3.0.0.rc'
 gem 'figaro'
+gem 'bgg-api', github: 'bhardin/bgg-api'

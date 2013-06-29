@@ -1,0 +1,12 @@
+= content_for(:title) { 'Games List' }
+
+.row
+  .large-12.columns.text-center
+    %header.main-title
+      %h1 Welcome to Games List
+      %p Track the board games you and your friends own
+.row
+  .large-12.columns.text-center.home-buttons
+    = link_to 'Login', new_user_session_path, class: 'button'
+    = link_to 'Signup', new_user_registration_path, class: 'button'
+
