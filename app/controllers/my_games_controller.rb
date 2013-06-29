@@ -8,7 +8,7 @@ class MyGamesController < ApplicationController
 
 	def create
 		user = current_user
-		user.add_game(params[:game][:title])
+		user.add_game_by_title(params[:game][:title]) if params[:game][:title].present?
 		@games = user.games
 		respond_to do |format|
 			format.js { render partial: 'games' }

@@ -27,9 +27,9 @@ describe MyGamesController do
 			sign_in @user
 		end
 
-		it "should call add_game on the current_user with the specified title" do
+		it "should call add_game_by_title on the current_user with the specified title" do
 			game_title = 'Game ' + rand(100).to_s
-			@user.should_receive(:add_game).with(game_title)
+			@user.should_receive(:add_game_by_title).with(game_title)
 			post :create, { format: 'js', game: { title: game_title } }
 		end
 
