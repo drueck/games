@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :confirmable
 
   has_many :user_games, dependent: :destroy
-  has_many :games, through: :user_games
+  has_many :games, -> { order 'title' }, through: :user_games
 
 	def add_game(game)
 		games << game unless games.include?(game)
