@@ -17,6 +17,13 @@ class User < ActiveRecord::Base
 		add_game(game)
 	end
 
+	def remove_game(game)
+		if games.include?(game)
+			games.destroy(game)
+			game.destroy if game.users.empty?
+		end
+	end
+
 	private
 
 	def format_title(title)

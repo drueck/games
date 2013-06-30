@@ -81,4 +81,48 @@ describe User do
 
 	end
 
+	describe "#remove_game" do
+
+		before(:each) do
+			@user = described_class.new
+			@game = Game.create(title: 'Game ' + rand(100).to_s)
+		end
+
+		context "when the game is not in the user's collection" do
+
+			it "should not raise an error" do
+				expect { @user.remove_game(@game) }.not_to raise_error
+			end
+
+			it "should not delete the game from the database" do
+				expect { @user.remove_game(@game) }.not_to change { Game.count }
+			end
+
+		end
+
+		context "when the game is in this user's collection as well as in other user's collections" do
+
+			it "removes the game from the user's collection" do
+				other_user = described_class.new
+				other_user.add_game(@game)
+				@user.add_game(@game)
+				@user.remove_game(@game)
+				expect(@user.games).not_to include(@game)
+			end
+
+		end
+
+		context "when the game is only in the user's collection" do
+
+			it "removes the game from the user's collection and from the system entirely" do
+				@user.add_game(@game)
+				@user.remove_game(@game)
+				expect(@user.games).not_to include(@game)
+				expect(Game.all).not_to include(@game)
+			end
+
+		end
+
+	end
+
 end
