@@ -15,4 +15,14 @@ class MyGamesController < ApplicationController
 		end
 	end
 
+	def destroy
+		user = current_user
+		game = Game.find(params[:id])
+		user.remove_game(game)
+		@games = user.games
+		respond_to do |format|
+			format.js { render partial: 'games' }
+		end
+	end
+
 end
