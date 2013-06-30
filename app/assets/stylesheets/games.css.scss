@@ -1,5 +1,17 @@
-ul.games {
-	li {
-		font-size: 2em;
-	}
+span.title {
+	font-size: 2em;
+}
+form {
+	margin-bottom: 0;
+}
+input.game-title-input {
+	font-size: 1.7em;
+}
+input.add-game-button {
+	font-size: 1.7em;
+	padding: 0.6em;
+	margin-bottom: 0;
+}
+input.remove-game-button {
+	margin-bottom: 0;
 }

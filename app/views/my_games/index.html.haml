@@ -2,11 +2,11 @@
 
 %section
   = form_tag my_games_path, remote: true do
-    .row.collapse
+    .row
       .large-10.columns
-        %input(type="text" name="game[title]" placeholder="Game Title")
+        %input.game-title-input(type="text" name="game[title]" placeholder="Game Title")
       .large-2.columns
-        %input.button.prefix(type="submit" value="Add")
+        %input.add-game-button.button.expand(type="submit" value="Add")
 
 %section#games
   = render 'games'
