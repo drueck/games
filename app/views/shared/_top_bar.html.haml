@@ -10,9 +10,6 @@
   %section.top-bar-section
     %ul.right
       - if user_signed_in?
-        %li
-          %a#toggle-edit-mode Edit List
-        %li.divider
         %li= link_to 'Logout', destroy_user_session_path, method: :delete
         %li= link_to 'Edit Profile', edit_user_registration_path
       - else
