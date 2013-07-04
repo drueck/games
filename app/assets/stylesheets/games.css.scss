@@ -1,26 +1,48 @@
 span.title {
 	font-size: 2em;
 }
+
 form {
 	margin-bottom: 0;
 }
+
 input.game-title-input {
 	font-size: 1.7em;
 }
-input.add-game-button {
-	font-size: 1.7em;
-	padding: 0.6em;
-	margin-bottom: 0;
-}
-input.remove-game-button {
-	margin-bottom: 0;
-}
 
 .add-game-form-section {
-	input, button {
-		margin: 0;
-	}
 	margin-bottom: 1em;
+	input, button {
+		margin-bottom: 0;
+	}
+	.add-game-button, .remove-games-button {
+		color: gray;
+		background-color: white;
+		border: none;
+		font-size: 4em;
+		padding: 0;
+	}
+	.add-game-button {
+		margin-left: 0.5em;
+		&:focus, &:hover {
+			color: midnightblue;
+		}
+	}
+	.remove-games-button {
+		&:focus, &:hover {
+			color: lightgray;
+		}
+	}
+	.edit-mode {
+		color: firebrick;
+		&:focus, &:hover {
+			color: firebrick;
+		}
+	}
+}
+
+input.remove-game-button {
+	margin-bottom: 0;
 }
 
 .games {

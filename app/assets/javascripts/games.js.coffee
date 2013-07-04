@@ -3,24 +3,22 @@ $ ->
 
 handleToggleEditModeClick = ->
 	$('#toggle-edit-mode').on 'click', (e) ->
+		e.preventDefault()
 		toggleEditMode()
-
-showDeleteLinksIfInEditMode = ->
-	if $('#toggle-edit-mode').html() == 'Done Editing'
-		showRemoveGameLinks()
+		return false
 
 toggleEditMode = ->
-	if $('#toggle-edit-mode').html() == 'Edit List'
-		turnOnEditMode()
-	else
+	if $('#toggle-edit-mode').hasClass('edit-mode')
 		turnOffEditMode()
+	else
+		turnOnEditMode()
 
 turnOnEditMode = ->
-	$('#toggle-edit-mode').html('Done Editing')
+	$('#toggle-edit-mode').addClass('edit-mode')
 	showRemoveGameLinks()
 
 turnOffEditMode = ->
-	$('#toggle-edit-mode').html('Edit List')
+	$('#toggle-edit-mode').removeClass('edit-mode')
 	hideRemoveGameLinks()
 
 showRemoveGameLinks = ->

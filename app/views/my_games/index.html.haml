@@ -3,10 +3,12 @@
 %section.add-game-form-section
   = form_tag my_games_path, remote: true do
     .row
-      .large-10.columns
-        %input.game-title-input(type="text" name="game[title]" placeholder="Game Title")
-      .large-2.columns
-        %input.add-game-button.button.expand(type="submit" value="Add")
+      .large-12.columns
+        %input.game-title-input.large-6.small-8.columns(type="text" name="game[title]" placeholder="Game Title")
+        %button.add-game-button(type="submit")
+          %i.icon-plus-sign-alt
+        %a#toggle-edit-mode.remove-games-button(href='#')
+          %i.icon-minus-sign-alt
 
 %section#games
   = render 'games'
