@@ -1,2 +1,5 @@
 $("input[name='game[title]']").val('');
 $("#games").html("<%= escape_javascript(render partial: 'games', formats: [:html], locals: { flash: flash } ) %>");
+if($('#toggle-edit-mode').html() === 'Done Editing') {
+	$('.remove-game-link').show();
+}

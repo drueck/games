@@ -1,7 +1,7 @@
 %ul.unstyled.games
   - @games.each do |game|
     %li.row
-      %span.title.large-10.columns= game.title
-      = button_to 'Remove', my_game_path(game), method: :delete,
-        remote: true, class: "remove-game-button button expand",
-        form_class: "remove-game-form large-2 columns"
+      .large-12.columns
+        %span.title= game.title
+        = link_to my_game_path(game), method: :delete, remote: true, class: 'remove-game-link' do
+          %i.icon-remove-circle

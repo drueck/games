@@ -15,3 +15,22 @@ input.add-game-button {
 input.remove-game-button {
 	margin-bottom: 0;
 }
+
+.add-game-form-section {
+	input, button {
+		margin: 0;
+	}
+	margin-bottom: 1em;
+}
+
+.games {
+	a.remove-game-link {
+		i { margin-left: 0.5em; }
+		font-size: 2em;
+		color: gray;
+		&:hover, &:focus {
+			color: red;
+		}
+		display: none;
+	}
+}
